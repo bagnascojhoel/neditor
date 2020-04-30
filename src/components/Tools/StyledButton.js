@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { colors } from '../../utils/styles/helpers';
 
-const StyledButton = styled.button`
-  display: inline-block;
+const StyledButton = styled.span`
+  display: flex;
+  align-content: center;
+  justify-content: center;
   background: none;
   border: none;
   color: ${colors.ligthBlue};

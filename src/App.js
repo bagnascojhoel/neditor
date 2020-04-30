@@ -28,7 +28,7 @@ const App = () => {
     <Container >
       <GlobalStyle/>
       <Slate editor={editor} value={value} onChange={val => setValue(val)}>
-        <Toolbar >
+        <Toolbar>
           <BlockTool format="code" iconName="code" />
           <BlockTool format="format_quote" iconName="format_quote" />
           <MarkTool format="bold" iconName="format_bold" />
