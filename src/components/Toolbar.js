@@ -1,13 +1,15 @@
-import * as React from 'react';
-import './Toolbar.css';
+import * as React from 'react'
+import styled from 'styled-components'
 
-export default class Toolbar extends React.Component {
-  render() {
+// const Toolbar = styled.div`
+//   text-align: center;
+//   margin-bottom: 15px;
+//   border-bottom: #5c89a5 solid 1px;
+//   padding: 1rem 0;
+// `
 
-    return (
-      <div style={{display:'flex',justifyContent:'center'}} className="toolbar">
-        {React.Children.map(this.props.children, child => React.cloneElement(child, {editor: this.props.editor}))}
-      </div>
-    );
-  }
-}
+const Toolbar = ({children}) => {
+  return (<div>{children}</div>);
+};
+
+export default Toolbar;

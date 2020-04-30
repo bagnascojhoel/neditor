@@ -1,16 +1,16 @@
 import React, { useMemo, useState, useCallback } from 'react';
+import GlobalStyle from './utils/styles/global';
 import { createEditor } from 'slate';
-import { Slate, Editable, withReact } from 'slate-react';
-import {Element, Leaf} from './components/Formats';
+import { Slate, withReact } from 'slate-react';
+import Leaf from './components/Leaf';
+import Element from './components/Element';
 import Toolbar from './components/Toolbar';
-import BlockTool from './components/BlockTool';
-import MarkTool from './components/MarkTool';
-import './App.css';
-import { ic_code } from 'react-icons-kit/md/ic_code';
-import { ic_format_bold } from 'react-icons-kit/md/ic_format_bold';
-import { ic_format_italic } from 'react-icons-kit/md/ic_format_italic';
+import MarkTool from './components/Tools/MarkTool';
+import Container from './components/Container';
+import MyEditable from './components/MyEditable';
+import BlockTool from './components/Tools/BlockTool';
 
-function App() {
+const App = () => {
 
   const editor = useMemo(() => withReact(createEditor()), []);
   const [value, setValue] = useState([
@@ -25,24 +25,23 @@ function App() {
 
 
   return (
-    <div className="editor">
-
-      <Slate editor={editor} value={value} onChange={val => setValue(val)} >
-
-        <Toolbar className="editor__header" editor={editor}>
-          <BlockTool format="code" icon={ic_code}/>
-          <MarkTool format="bold" icon={ic_format_bold}/>
-          <MarkTool format="italic" icon={ic_format_italic}/>
-        </Toolbar>
-
-        <Editable
+    <Container >
+      <GlobalStyle/>
+      <Slate editor={editor} value={value} onChange={val => setValue(val)}>
+        <Toolbar >
+          <BlockTool format="code" iconName="code" />
+          <BlockTool format="format_quote" iconName="format_quote" />
+          <MarkTool format="bold" iconName="format_bold" />
+          <MarkTool format="italic" iconName="format_italic" />
+          <MarkTool format="capitalize" iconName="text_format" />
+      </Toolbar>
+        <MyEditable
           spellCheck
           placeholder="Type in some text..."
           renderElement={renderElement}
-          renderLeaf={renderLeaf}
-          className="editor__content"/>
-      </Slate>
-    </div>
+          renderLeaf={renderLeaf}/>
+        </Slate>
+    </Container>
   );
 }
 
