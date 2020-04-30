@@ -1,18 +1,17 @@
 import * as React from 'react';
-import Code from './Blocks/Code';
+import Paragraph from './Blocks/Paragraph';
+import Quote from './Blocks/Quote';
 
 const Element = ({ attributes, children, element }) => {
   switch (element.type) {
-    case 'code':
+    case 'quote':
       return (
-        <Code>{children}</Code>
-      );
+        <Quote {...attributes}>{children}</Quote>
+      )
 
     default:
       return (
-        <p  {...attributes} style={{ marginTop: 0, marginBottom: '5px' }}>
-          {children}
-        </p>
+        <Paragraph {...attributes}>{children}</Paragraph>
       );
   }
 };

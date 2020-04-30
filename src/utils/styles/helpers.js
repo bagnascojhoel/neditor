@@ -6,3 +6,9 @@ export const colors = {
     inset: 'lightgray 0 0 10px 0 inset',
   }
 }
+
+export const fonts = {
+  sansSerif: 'Arial, Helvetica, sans-serif',
+  monospace: '"Courier New", Courier, monospace',
+  serif: 'Georgia, serif',
+}

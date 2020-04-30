@@ -1,20 +1,19 @@
 import * as React from 'react';
+import Code from './Leafs/Code';
 
 
 const Leaf = ({ attributes, children, leaf }) => {
-  const {bold, italic, capitalize} = leaf;
+  const {code, bold, italic, capitalize} = leaf
+  const leafStyle = {}
 
-  const leafStyle = {
-    fontWeight: bold ? 'bold' : 'normal',
-    fontStyle: italic ? 'italic' : 'normal',
-    textTransform: capitalize ? 'capitalize' : 'none',
-  };
+  leafStyle.fontWeight = bold ? '700' : 'normal'
+  leafStyle.fontStyle = italic ? 'italic' : 'normal'
+  leafStyle.textTransform = capitalize ? 'capitalize' : 'none'
 
-  return (
-  <span
-    {...attributes}
-    style={leafStyle}>
-      {children}</span>)
+  if (code)
+    children = <Code>{children}</Code>
+
+  return (<span {...attributes} style={leafStyle}>{children}</span>)
 }
 
 export default Leaf;
