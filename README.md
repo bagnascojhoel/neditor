@@ -21,4 +21,4 @@ To run the development server.
 
 ## License
 Since I created this project only to learn the used technologies, it is licensed under the MIT
-License - see teh [LICENSE.md](LICENSE.md) file for the details.
+License - see [LICENSE.md](LICENSE.md) file for the details.
