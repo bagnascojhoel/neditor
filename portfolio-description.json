@@ -1,0 +1,5 @@
+{
+    "title": "NEditor",
+    "tags": ["front-end", "react", "javascript"],
+    "description": "A simple front-end application for a rich-text editor. Used this to learn more about how a text editor works."
+  }
